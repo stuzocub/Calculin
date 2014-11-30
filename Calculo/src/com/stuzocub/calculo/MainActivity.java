@@ -3,7 +3,9 @@ package com.stuzocub.calculo;
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.Activity;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,7 +24,14 @@ import android.widget.Toast;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         resultado=(TextView)findViewById(R.id.txtResultado);
+        // TODO Contralar tama–o de textview resultado
         formula=(TextView)findViewById(R.id.formula);
+        
+        Typeface myTypeface = Typeface.createFromAsset(getAssets(), "fonts/dkcrayonrumble.ttf");
+        
+        resultado.setTypeface(myTypeface);
+        formula.setTypeface(myTypeface); 
+        
         ActionBar actionBar = getActionBar(); 
         actionBar.hide();
         nuevaOperacion(0);       
@@ -30,6 +39,7 @@ import android.widget.Toast;
     public void clickNum(View v){
     	
     	Button boton =(Button)v;
+    	Log.d("Calculo" , "clickNum: " + boton.getText().toString());
     	numeroPulsado(boton.getText().toString());
     	int resultadoAComprobar=Integer.parseInt((String) resultado.getText());
     	if( resultadoAComprobar == intResultado){
@@ -46,6 +56,7 @@ import android.widget.Toast;
     }
     
     private void numeroPulsado(String digito) {
+    	Log.d("Calculo" , "numeroPulsado");
     	if(resultado.getText().equals("0")){
     		resultado.setText(digito);
     	}else{
@@ -53,6 +64,7 @@ import android.widget.Toast;
     	}
     }
     private void nuevaOperacion(int res_anterior){
+    	Log.d("Calculo" , "nuevaOperacion");
     	genOperaciones m_generador=new genOperaciones();
     	if(res_anterior==0){
     		formula.setText(m_generador.GetnuevaOperacion());

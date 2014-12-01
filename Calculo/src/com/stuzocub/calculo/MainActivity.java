@@ -14,7 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 	// TODO Porque he tenido que a–adir esto? Ha sido al a–adir lo de ActionBar
-@SuppressLint("NewApi") public class MainActivity extends Activity {
+public class MainActivity extends Activity {
 	private TextView resultado;
 	private TextView formula;
 	private int intResultado;

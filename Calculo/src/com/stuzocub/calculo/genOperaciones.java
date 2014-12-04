@@ -71,7 +71,7 @@ public class genOperaciones {
 				break;
 			}
 		    Log.d("Calculo" , "GetnuevaOperacion: Resultado. " + resultado);
-		}while((resultado<=1)||(resultado>dificultad));
+		}while(valido==false);
 		
 		return operacionStr;
 	}
@@ -131,7 +131,7 @@ public class genOperaciones {
 				break;
 			}
 		    Log.d("Calculo" , "GetnuevaOperacion: Resultado. " + resultado);
-		}while(valido=true);
+		}while(valido==false);
 		
 		return operacionStr;
 	}

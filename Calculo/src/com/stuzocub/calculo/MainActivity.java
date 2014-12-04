@@ -54,13 +54,11 @@ public class MainActivity extends Activity {
     	}  	
     }
     
-    public void clickBorrar(View v){
-    	resultado.setText("0");
-    }
+    
     
     private void numeroPulsado(String digito) {
     	int a;
-    	//Log.d("Calculo" , "numeroPulsado");
+    	
     	if(resultado.getText().equals("0")){
     		resultado.setText(digito);
     	}else{
@@ -68,7 +66,7 @@ public class MainActivity extends Activity {
     	}
     	a=Integer.parseInt(resultado.getText().toString());
     	Log.d("Calculo" , "numero Pulsado" +a);
-    	if(a>1000){
+    	if(a>100){
     		resultado.setText("0");
     	}
     }

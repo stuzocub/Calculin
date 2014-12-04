@@ -140,14 +140,6 @@
         android:textSize="@dimen/numbersize"
         android:onClick="clickNum" />
 
-    <Button
-        android:id="@+id/buttonBorrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/Button7"
-        android:layout_alignRight="@+id/Button9"
-        android:layout_below="@+id/Button7"
-        android:text="Borrar"
-        android:onClick="clickBorrar" />
+    
 
 </RelativeLayout>

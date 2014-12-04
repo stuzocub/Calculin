@@ -1,5 +1,6 @@
 package com.stuzocub.calculo;
 
+import android.R.integer;
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.Activity;
@@ -9,11 +10,12 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-	// TODO Porque he tenido que a–adir esto? Ha sido al a–adir lo de ActionBar
+	
 public class MainActivity extends Activity {
 	private TextView resultado;
 	private TextView formula;
@@ -22,6 +24,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         resultado=(TextView)findViewById(R.id.txtResultado);
         // TODO Contralar tama–o de textview resultado
@@ -32,8 +35,8 @@ public class MainActivity extends Activity {
         resultado.setTypeface(myTypeface);
         formula.setTypeface(myTypeface); 
         
-        ActionBar actionBar = getActionBar(); 
-        actionBar.hide();
+        
+        
         nuevaOperacion(0);       
     }  
     public void clickNum(View v){
@@ -56,11 +59,17 @@ public class MainActivity extends Activity {
     }
     
     private void numeroPulsado(String digito) {
-    	Log.d("Calculo" , "numeroPulsado");
+    	int a;
+    	//Log.d("Calculo" , "numeroPulsado");
     	if(resultado.getText().equals("0")){
     		resultado.setText(digito);
     	}else{
     		resultado.setText(resultado.getText()+digito);
+    	}
+    	a=Integer.parseInt(resultado.getText().toString());
+    	Log.d("Calculo" , "numero Pulsado" +a);
+    	if(a>1000){
+    		resultado.setText("0");
     	}
     }
     private void nuevaOperacion(int res_anterior){

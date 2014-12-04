@@ -62,6 +62,8 @@ public class genOperaciones {
 	}
 	public String GetnuevaOperacion(int operador1){
 		
+		// TODO Hay que cambiar los while, con una bandera
+		
 		String operacionStr="";
 		Random rnd = new Random();
 		int operador2;

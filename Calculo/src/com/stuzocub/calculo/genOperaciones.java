@@ -1,6 +1,7 @@
 package com.stuzocub.calculo;
 import java.util.Random;
 
+import android.R.bool;
 import android.util.Log;
 
 public class genOperaciones {
@@ -30,26 +31,40 @@ public class genOperaciones {
 		int operador1;
 		int operador2;
 		int ioperador;
+		boolean valido;
 		do{
+			valido=true;
 			operador1=(int)(rnd.nextDouble() * 9 + 1);
 		    operador2=(int)(rnd.nextDouble() * 9 + 1);
-		    ioperador=(int)(rnd.nextDouble() * 3 + 1);
+		    ioperador=(int)(rnd.nextDouble() * 4 + 1);
 		    switch (ioperador) {
 			case 1:
 				operacionStr=operador1+"+"+operador2;
 				setResultado(operador1+operador2);
+				if(resultado>dificultad){
+					valido=false;
+				}
 				break;
 			case 2:
 				operacionStr=operador1+"-"+operador2;
 				setResultado(operador1-operador2);
+				if(resultado<=1){
+					valido=false;
+				}
 				break;
 			case 3:
 				operacionStr=operador1+"*"+operador2;
 				setResultado(operador1*operador2);
+				if(resultado>dificultad){
+					valido=false;
+				}
 				break;
 			case 4:
 				operacionStr=operador1+"/"+operador2;
 				setResultado(operador1/operador2);
+				if(operador1%operador2!=0){
+					valido=false;
+				}
 				break;
 
 			default:
@@ -68,7 +83,9 @@ public class genOperaciones {
 		Random rnd = new Random();
 		int operador2;
 		int ioperador;
+		boolean valido;
 		do{
+			valido=true;
 			// TODO Aumentar las posibilidades de / * poniendolos mas case
 		    operador2=(int)(rnd.nextDouble() * 9 + 2);
 		    ioperador=(int)(rnd.nextDouble() * 10 + 1);
@@ -77,10 +94,16 @@ public class genOperaciones {
 			case 1:
 				operacionStr=operador1+"+"+operador2;
 				setResultado(operador1+operador2);
+				if(resultado>dificultad){
+					valido=false;
+				}
 				break;
 			case 2:
 				operacionStr=operador1+"-"+operador2;
 				setResultado(operador1-operador2);
+				if(resultado<=1){
+					valido=false;
+				}
 				break;
 			case 3:
 			case 4:
@@ -91,18 +114,24 @@ public class genOperaciones {
 			case 9:
 				operacionStr=operador1+"*"+operador2;
 				setResultado(operador1*operador2);
+				if(resultado>dificultad){
+					valido=false;
+				}
 				break;
 			
 			case 10:
 				operacionStr=operador1+"/"+operador2;
 				setResultado(operador1/operador2);
+				if(operador1%operador2!=0){
+					valido=false;
+				}
 				break;
 
 			default:
 				break;
 			}
 		    Log.d("Calculo" , "GetnuevaOperacion: Resultado. " + resultado);
-		}while((resultado<=1)||(resultado>dificultad)||(operador1%operador2!=0));
+		}while(valido=true);
 		
 		return operacionStr;
 	}

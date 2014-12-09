@@ -10,6 +10,12 @@ public class genOperaciones {
 		
 	private int dificultad;
 	
+	public static class operacion{
+		int operador1;
+		int operador2;
+		char operador;
+	}
+	
 	public int getResultado() {
 		return resultado;
 	}
@@ -25,6 +31,8 @@ public class genOperaciones {
 	}
 	
 	public String GetnuevaOperacion(){
+		
+		
 		
 		String operacionStr="";
 		Random rnd = new Random();

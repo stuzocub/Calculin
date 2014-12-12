@@ -76,7 +76,9 @@ public class MainActivity extends Activity {
     	if(res_anterior==0){
     		formula.setText(m_generador.GetnuevaOperacion());
     	}else{
-    		formula.setText(m_generador.GetnuevaOperacion(res_anterior));
+    		//formula.setText(m_generador.GetnuevaOperacion(res_anterior));
+    		// TODO Cambiar esto para nueva clase
+    		genOperaciones.operacion op = m_generador.GetnuevaOperacion(res_anterior);
     	}
     		
     	intResultado=m_generador.getResultado();

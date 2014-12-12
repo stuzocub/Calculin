@@ -28,6 +28,7 @@ public class genOperaciones {
 
 	public genOperaciones() {
 		this.dificultad=100;
+		
 	}
 	
 	public String GetnuevaOperacion(){
@@ -83,7 +84,7 @@ public class genOperaciones {
 		
 		return operacionStr;
 	}
-	public String GetnuevaOperacion(int operador1){
+	public operacion GetnuevaOperacion(int operador1){
 		
 		// TODO Hay que cambiar los while, con una bandera
 		
@@ -141,7 +142,9 @@ public class genOperaciones {
 		    Log.d("Calculo" , "GetnuevaOperacion: Resultado. " + resultado);
 		}while(valido==false);
 		
-		return operacionStr;
+		// TODO Meter operaciones y operador en la inner class
+		operacion operacion_1=new operacion();
+		return operacion_1;
 	}
 	public int getDificultad() {
 		return dificultad;
